@@ -36,6 +36,7 @@ export default function HomeSection1({
                 <Image
                   src={small1.image}
                   alt={small1.title}
+                  title={small1.title}
                   width={96}
                   height={80}
                   className="w-full h-full object-cover"
@@ -59,6 +60,7 @@ export default function HomeSection1({
               <Image
                 src={featured.image}
                 alt={featured.title}
+                title={featured.title}
                 className="w-full h-full object-cover"
                 width={800}
                 height={500}
@@ -68,9 +70,9 @@ export default function HomeSection1({
             </div>
 
             <div className="p-4 sm:p-6 flex-1 flex flex-col justify-start gap-4">
-              <h1 className="text-xl sm:text-3xl font-bold leading-snug tracking-tight">
+              <h2 className="text-xl sm:text-3xl font-bold leading-snug tracking-tight">
                 {featured.title}
-              </h1>
+              </h2>
               <p className="block text-sm leading-relaxed text-gray-800">
                 {featured.shortdescription}
               </p>
@@ -87,6 +89,7 @@ export default function HomeSection1({
                 <Image
                   src={small2.image}
                   alt={small2.title}
+                  title={small2.title}
                   width={96}
                   height={80}
                   className="w-full h-full object-cover"
@@ -103,7 +106,7 @@ export default function HomeSection1({
         </div>
 
         <aside className="order-last lg:order-none relative col-span-2 border-t bg-white flex flex-col overflow-hidden shadow-md">
-          <h3 className="p-6 text-2xl sm:text-3xl">LATEST NEWS</h3>
+          <h2 className="p-6 text-2xl sm:text-3xl">LATEST NEWS</h2>
           <div
             className="relative px-6 overflow-y-auto scrollbar-hide"
             style={{ maxHeight: "450px" }}
@@ -122,14 +125,15 @@ export default function HomeSection1({
                       <span className="w-2 h-2 bg-red-500 rounded-full inline-block mr-2" />
                       {item.date}
                     </p>
-                    <h4 className="text-[15px] font-semibold leading-snug tracking-tight">
+                    <h3 className="text-[15px] font-semibold leading-snug tracking-tight">
                       {item.title}
-                    </h4>
+                    </h3>
                   </div>
                   <div className="w-24 aspect-[4/3] flex-shrink-0 overflow-hidden">
                     <Image
                       src={item.image}
                       alt={item.title}
+                      title={item.title}
                       width={96}
                       height={72}
                       className="w-full h-full object-cover"

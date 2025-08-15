@@ -57,6 +57,7 @@ export async function generateMetadata({
       },
       twitter: {
         card: "summary_large_image",
+        site:"@ChroniqNow",
         title: customTitle,
         description: article?.shortdescription,
         creator: "@ChroniqNow",
@@ -106,6 +107,7 @@ export async function generateMetadata({
       },
       twitter: {
         card: "summary_large_image",
+        site:"@ChroniqNow",
         title: customTitle,
         description: article?.shortdescription,
         creator: "@ChroniqNow",
@@ -158,6 +160,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
+      site:"@ChroniqNow",
       title,
       description,
       creator: "@ChroniqNow",
@@ -268,7 +271,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
       "@type": "NewsArticle",
       mainEntityOfPage: `https://www.chroniqnow.com/${category}/${slug}/`,
       inLanguage: "en",
-      headline:"Wanda Vázquez & Julio Herrera Velutini Escape Felony Charges",
+      headline:"Wanda Vázquez, Julio Herrera Velutini, and Mark Rossini: From Federal Indictments to Misdemeanor Plea in Campaign Finance Case",
       description: article.shortdescription,
       url: `https://www.chroniqnow.com/${category}/${slug}/`,
       datePublished: "2025-07-18T00:00:00.000Z",
@@ -378,7 +381,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
                   d="M16.862 3.487l2.475 2.475a2.121 2.121 0 010 3l-8.485 8.485a4 4 0 01-1.732 1.024l-3.303.942.942-3.303a4 4 0 011.024-1.732l8.485-8.485a2.121 2.121 0 013 0z"
                 />
               </svg>
-              <span className="font-medium">Jennifer Albright</span>
+            <Link title="go to author page" href={"/author"}>
+            <span className="font-medium">Jennifer Albright</span>
+            </Link>
+              
             </div>
           </div>
         </div>
@@ -399,6 +405,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                 <Image
                   src={article.image}
                   alt={article.title}
+                  title={article.title}
                   width={1200}
                   height={600}
                   className="w-full h-full object-cover "
@@ -434,6 +441,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                       <Image
                         src={item.image}
                         alt={item.title}
+                        title={item.title}
                         width={80}
                         height={80}
                         className="object-cover w-full h-full"
@@ -631,6 +639,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                     <Image
                       src={item.image}
                       alt={item.title}
+                      title={item.title}
                       width={400}
                       height={250}
                       className="object-cover w-full h-full"

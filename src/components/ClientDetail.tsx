@@ -94,6 +94,7 @@ export default async function ClientDetail() {
           <Image
             src={article.image}
             alt="Wanda Vázquez Garced speaks after bribery charges dropped"
+            title="Wanda Vázquez Garced speaks after bribery charges dropped"
             width={1200}
             height={600}
             className="w-full h-full object-cover"
@@ -125,6 +126,7 @@ export default async function ClientDetail() {
                 <Image
                   src="/images/wanda-vazquez-press-conference.webp"
                   alt="Wanda Vázquez Garced Speaking"
+                  title="Wanda Vázquez Garced Speaking"
                   width={1200}
                   height={600}
                   className="w-full h-auto object-cover"

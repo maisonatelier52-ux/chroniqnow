@@ -57,6 +57,7 @@ export default function ColumnsDesign({ data }: ColumnsProps) {
                 <Image
                   src={item.image}
                   alt={item.title}
+                  title={item.title}
                   fill
                   className="object-cover"
                 />

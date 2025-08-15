@@ -34,6 +34,7 @@ export default function LoadMoreArticles({ articles, category }: Props) {
               <Image
                 src={item.image}
                 alt={item.title}
+                title={item.title}
                 fill
                 className="object-cover"
               />
@@ -63,15 +64,16 @@ export default function LoadMoreArticles({ articles, category }: Props) {
               <Image
                 src={item.image}
                 alt={item.title}
+                title={item.title}
                 width={400}
                 height={250}
                 className="object-cover w-full h-full"
               />
             </div>
             <div className="flex-1 p-4 flex flex-col justify-between">
-              <h4 className="text-base leading-snug tracking-tight text-gray-900 font-bold">
+              <h3 className="text-base leading-snug tracking-tight text-gray-900 font-bold">
                 {item.title}
-              </h4>
+              </h3>
             </div>
             <div className="w-full bg-white border-t border-gray-100 text-red-600 text-center py-2 font-semibold">
               {item.date}

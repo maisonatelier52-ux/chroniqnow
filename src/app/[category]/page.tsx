@@ -57,7 +57,7 @@ export async function generateMetadata({
   // SEO-optimized title (55–60 chars)
   const title = `${capitalized} News - Chroniq Now: Global ${capitalized} Headlines`;
   // SEO-optimized description (~140–150 chars)
-  const description = `Get the latest ${capitalized} news on Chroniq Now – your global source for politics, business, culture & more. Breaking updates, in-depth analysis & exclusive stories.`;
+  const description = `Get the latest ${capitalized}  news from Chroniq Now. We offer breaking updates, in-depth analysis, and exclusive stories on global politics, business, and culture.`;
 
   return {
     title,
@@ -84,6 +84,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
+      site:"@ChroniqNow",
       title,
       description,
       creator: "@ChroniqNow",
@@ -131,7 +132,7 @@ export default async function CategoryPage({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
+    "@type": "CollectionPage",
     headline: `${capitalized} News - Chroniq Now`,
     url: `https://www.chroniqnow.com/${category}`,
     keywords: [
@@ -182,11 +183,25 @@ export default async function CategoryPage({
         </nav>
 
         <div className="flex items-center mb-8">
-          <div className="w-0.5 h-8 bg-red-600 mr-3" />
-          <h1 className="uppercase text-2xl sm:text-3xl text-gray-900">
-            {category}
-          </h1>
-        </div>
+  <div className="w-0.5 h-8 bg-red-600 mr-3" />
+  <h1 className="uppercase text-2xl sm:text-3xl text-gray-900">
+    {category}
+  </h1>
+</div>
+
+{/* Introductory SEO text */}
+<div className="mb-10 space-y-4 text-gray-700 leading-relaxed">
+  <p>
+    Follow the most important <strong>{category} news</strong> stories as they break, 
+    with trusted reporting and analysis that cuts through the noise.
+  </p>
+  <p>
+    Our dedicated <strong>{category}</strong> coverage keeps you updated on key 
+    developments, exclusive insights, and the trends shaping what happens next.
+  </p>
+</div>
+
+
 
         {/* mobile layout */}
         <div className="block lg:hidden space-y-6">
@@ -198,6 +213,7 @@ export default async function CategoryPage({
             <div className="w-full h-64 overflow-hidden">
               <Image
                 src={featuredArticle.image}
+                title={featuredArticle.title}
                 alt={featuredArticle.title}
                 width={1200}
                 height={400}
@@ -229,6 +245,7 @@ export default async function CategoryPage({
                 <div className="w-24 h-24 flex-shrink-0 overflow-hidden ">
                   <Image
                     src={item.image}
+                    title={item.title}
                     alt={item.title}
                     width={96}
                     height={96}
@@ -237,9 +254,9 @@ export default async function CategoryPage({
                 </div>
 
                 <div className="flex-1 ml-4">
-                  <h3 className="text-base font-bold text-gray-900 line-clamp-2">
+                  <h2 className="text-base font-bold text-gray-900 line-clamp-2">
                     {item.title}
-                  </h3>
+                  </h2>
                   <p className="mt-1 text-sm text-red-600 font-semibold">
                     {item.date}
                   </p>
@@ -263,6 +280,7 @@ export default async function CategoryPage({
                 <Image
                   src={otherPageArticles[0].image}
                   alt={otherPageArticles[0].title}
+                  title={otherPageArticles[0].title}
                   width={96}
                   height={80}
                   className="object-cover w-full h-full"
@@ -289,6 +307,7 @@ export default async function CategoryPage({
                 <Image
                   src={featuredArticle.image}
                   alt={featuredArticle.title}
+                  title={featuredArticle.title}
                   width={1200}
                   height={960}
                   className="w-full h-full object-cover"
@@ -320,6 +339,7 @@ export default async function CategoryPage({
                 <Image
                   src={otherPageArticles[1].image}
                   alt={otherPageArticles[1].title}
+                  title={otherPageArticles[1].title}
                   width={96}
                   height={80}
                   className="w-full h-full object-cover"
@@ -347,13 +367,14 @@ export default async function CategoryPage({
                 className="flex flex-col overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-center justify-between h-40">
-                  <h3 className="text-base font-bold text-gray-900 line-clamp-4 p-2 mt-0 leading-snug tracking-tight">
+                  <h2 className="text-base font-bold text-gray-900 line-clamp-4 p-2 mt-0 leading-snug tracking-tight">
                     {item.title}
-                  </h3>
+                  </h2>
                   <div className="w-60 h-full flex-shrink-0 overflow-hidden">
                     <Image
                       src={item.image}
                       alt={item.title}
+                      title={item.title}
                       width={140}
                       height={160}
                       className="w-full h-full object-cover"
@@ -383,6 +404,7 @@ export default async function CategoryPage({
                     <Image
                       src={item.image}
                       alt={item.title}
+                      title={item.title}
                       width={400}
                       height={250}
                       className="object-cover w-full h-full"

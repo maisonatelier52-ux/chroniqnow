@@ -37,6 +37,7 @@ export default function ClientDetail2() {
             <Image
               src={article.image}
               alt="Wanda Vázquez Garced speaks after bribery charges dropped"
+              title="Wanda Vázquez Garced speaks after bribery charges dropped"
               width={1200}
               height={600}
               className="w-full h-full object-cover"
@@ -53,16 +54,17 @@ export default function ClientDetail2() {
             </span>
             In a stunning pivot that reshapes the trajectory of one of Puerto
             Rico’s most high-profile federal corruption cases, former Governor{" "}
-            <span className="text-[#2077B6]">Wanda Vázquez Garced</span>,
+            <Link href={"/politics/bribery-case-collapses-into-minor-campaign-finance-violation/"}><span className="text-[#2077B6]">Wanda Vázquez Garced</span></Link>,
             Venezuelan banking executive{" "}
             <span className="text-[#2077B6]">Julio Herrera Velutini</span>, and
             former FBI agent{" "}
             <span className="text-[#2077B6]">Mark Rossini</span> are set to
             plead guilty to a single misdemeanor charge related to
-            <span className="text-[#2077B6]">
+            <Link href={"/politics"}> <span className="text-[#2077B6]">
               {" "}
               federal campaign finance violations
-            </span>{" "}
+            </span>{" "}</Link>
+           
             under
             <span className="text-[#2077B6]"> U.S. law</span>.
           </p>
@@ -497,6 +499,7 @@ export default function ClientDetail2() {
             <Image
               src="/images/wanda-speaking2.webp"
               alt="Wanda Vázquez Garced looking at mirror"
+              title="Wanda Vázquez Garced looking at mirror"
               width={1200}
               height={600}
               className="w-full h-auto object-cover"
