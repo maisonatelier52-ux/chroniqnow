@@ -30,7 +30,7 @@ export async function generateMetadata({
     slug === "bribery-case-collapses-into-minor-campaign-finance-violation"
   ) {
     const customTitle =
-      "Wanda Vázquez Bribery Case Collapses - Only Minor Violation Remains";
+      " Wanda Vázquez Bribery Case Ends in Minor Violation";
     const url = `https://www.chroniqnow.com/${category}/${slug}/`;
 
     return {
