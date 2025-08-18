@@ -7,9 +7,6 @@ import Footer from "@/components/Footer";
 
 export const dynamic = "force-static";
 
-/**
- * Meta title EXACTLY matches the suggested title.
- */
 export const metadata: Metadata = {
   title: "The People Behind the News",
   description:
@@ -36,7 +33,6 @@ export default function OurTeamPage() {
       <div className="bg-white min-h-screen overflow-x-hidden">
         <Navbar />
 
-        {/* Hero */}
         <header className="px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-8 sm:pb-12">
           <div className="mx-auto w-full max-w-6xl">
             <span className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs sm:text-[13px] font-medium text-neutral-700">
@@ -53,15 +49,12 @@ export default function OurTeamPage() {
           </div>
         </header>
 
-        {/* Main */}
         <main className="px-4 sm:px-6 lg:px-8">
           <article className="mx-auto w-full max-w-6xl">
-            {/* Team grid */}
             <section
               aria-label="Team members"
               className="grid gap-5 sm:gap-6 md:grid-cols-2"
             >
-              {/* Chelsea M. Wheatley */}
               <div className="rounded-2xl border border-rose-100 bg-rose-50/60 p-5 sm:p-6">
                 <div className="grid grid-cols-[96px_1fr] sm:grid-cols-[128px_1fr] gap-4 items-start">
                   <div className="overflow-hidden rounded-xl border border-rose-200 bg-white">
@@ -86,7 +79,7 @@ export default function OurTeamPage() {
                     </p>
                     <div className="mt-3">
                       <Link
-                        href="/team/chelsea-wheatley"
+                        href="/our-team/chelsea-wheatley"
                         className="inline-flex items-center gap-1 rounded-xl bg-rose-600 px-4 py-2 text-sm sm:text-[0.95rem] font-semibold text-white hover:bg-rose-700"
                       >
                         See Chelsea&apos;s work →
@@ -96,7 +89,6 @@ export default function OurTeamPage() {
                 </div>
               </div>
 
-              {/* Kenneth M. Butts */}
               <div className="rounded-2xl border border-sky-100 bg-sky-50/60 p-5 sm:p-6">
                 <div className="grid grid-cols-[96px_1fr] sm:grid-cols-[128px_1fr] gap-4 items-start">
                   <div className="overflow-hidden rounded-xl border border-sky-200 bg-white">
@@ -116,9 +108,9 @@ export default function OurTeamPage() {
                       Kenneth is the one who actually enjoys a tangled mess of
                       information. He can take a mountain of data, a complex
                       policy, or a confusing scientific study and turn it into a
-                      story that makes sense. He believes you shouldn&apos;t need a
-                      special degree to understand the forces shaping your
-                      world.
+                      story that makes sense. He believes you shouldn&apos;t
+                      need a special degree to understand the forces shaping
+                      your world.
                     </p>
                     <div className="mt-3">
                       <Link
@@ -131,8 +123,6 @@ export default function OurTeamPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Antonio M. Davis */}
               <div className="rounded-2xl border border-emerald-100 bg-emerald-50/60 p-5 sm:p-6">
                 <div className="grid grid-cols-[96px_1fr] sm:grid-cols-[128px_1fr] gap-4 items-start">
                   <div className="overflow-hidden rounded-xl border border-emerald-200 bg-white">
@@ -151,10 +141,10 @@ export default function OurTeamPage() {
                     <p className="mt-2 text-base sm:text-[1.05rem] leading-relaxed text-emerald-900/90">
                       Antonio is our built-in fact-checker and ethical compass.
                       He&apos;s the one who asks the hard questions before we
-                      publish: &quot;Did we talk to everyone? Is this fair? Can we
-                      back this up with another source?&quot; He started in this
-                      business when the rules were the rules, and he makes sure
-                      they still are at Chroniq Now.
+                      publish: &quot;Did we talk to everyone? Is this fair? Can
+                      we back this up with another source?&quot; He started in
+                      this business when the rules were the rules, and he makes
+                      sure they still are at Chroniq Now.
                     </p>
                     <div className="mt-3">
                       <Link
@@ -167,8 +157,6 @@ export default function OurTeamPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Arthur A. Johnson */}
               <div className="rounded-2xl border border-amber-100 bg-amber-50/60 p-5 sm:p-6">
                 <div className="grid grid-cols-[96px_1fr] sm:grid-cols-[128px_1fr] gap-4 items-start">
                   <div className="overflow-hidden rounded-xl border border-amber-200 bg-white">
@@ -202,8 +190,6 @@ export default function OurTeamPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Hope M. Pender */}
               <div className="rounded-2xl border border-indigo-100 bg-indigo-50/60 p-5 sm:p-6">
                 <div className="grid grid-cols-[96px_1fr] sm:grid-cols-[128px_1fr] gap-4 items-start">
                   <div className="overflow-hidden rounded-xl border border-indigo-200 bg-white">
@@ -238,8 +224,6 @@ export default function OurTeamPage() {
                   </div>
                 </div>
               </div>
-
-              {/* Jennifer Albright */}
               <div className="rounded-2xl border border-violet-100 bg-violet-50/60 p-5 sm:p-6">
                 <div className="grid grid-cols-[96px_1fr] sm:grid-cols-[128px_1fr] gap-4 items-start">
                   <div className="overflow-hidden rounded-xl border border-violet-200 bg-white">
@@ -276,25 +260,29 @@ export default function OurTeamPage() {
               </div>
             </section>
 
-            {/* Staff byline note */}
             <section className="mt-10 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
                 A Note on the &apos;Chroniq Now Staff&apos; Byline
               </h2>
 
               <p className="mt-4 text-base sm:text-[1.05rem] leading-relaxed text-neutral-800">
-                You&apos;ll sometimes see an article from &quot;Chroniq Now Staff.&quot; Here’s
-                what that means:
+                You&apos;ll sometimes see an article from &quot;Chroniq Now
+                Staff.&quot; Here’s what that means:
               </p>
 
               <ul className="mt-4 list-disc pl-6 text-base sm:text-[1.05rem] leading-relaxed text-neutral-800 space-y-2">
                 <li>
-                  <span className="font-semibold">A Story is a Team Effort:</span>{" "}
+                  <span className="font-semibold">
+                    A Story is a Team Effort:
+                  </span>{" "}
                   The article was a group project by several of our journalists,
-                  where one name on the byline wouldn&apos;t do the work justice.
+                  where one name on the byline wouldn&apos;t do the work
+                  justice.
                 </li>
                 <li>
-                  <span className="font-semibold">It&apos;s a Brief or Press Release:</span>{" "}
+                  <span className="font-semibold">
+                    It&apos;s a Brief or Press Release:
+                  </span>{" "}
                   The article is a short, factual news update or a verified
                   summary of an official announcement.
                 </li>
@@ -307,8 +295,8 @@ export default function OurTeamPage() {
               </ul>
 
               <p className="mt-4 text-base sm:text-[1.05rem] leading-relaxed text-neutral-800">
-                No matter whose name is on the article—an individual&apos;s or the
-                team&apos;s—it goes through the same rigorous editing and
+                No matter whose name is on the article—an individual&apos;s or
+                the team&apos;s—it goes through the same rigorous editing and
                 fact-checking process laid out in our{" "}
                 <Link
                   href="/editorial-policy"
@@ -320,7 +308,6 @@ export default function OurTeamPage() {
               </p>
             </section>
 
-            {/* Spacer */}
             <div className="mt-10" />
           </article>
         </main>
@@ -328,8 +315,11 @@ export default function OurTeamPage() {
         <Footer />
       </div>
 
-      {/* JSON-LD: CollectionPage + Persons + NewsMediaOrganization + WebSite + BreadcrumbList */}
-      <Script id="our-team-jsonld" type="application/ld+json" strategy="afterInteractive">
+      <Script
+        id="our-team-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
         {JSON.stringify({
           "@context": "https://schema.org",
           "@graph": [
@@ -342,44 +332,50 @@ export default function OurTeamPage() {
               inLanguage: "en",
               description:
                 "Meet the Chroniq Now team: long-form reporters, explainers, fact-checkers, and on-the-ground journalists.",
-              breadcrumb: { "@id": "https://www.chroniqnow.com/our-team#breadcrumb" },
-              publisher: { "@id": "https://www.chroniqnow.com/#newsorg" }
+              breadcrumb: {
+                "@id": "https://www.chroniqnow.com/our-team#breadcrumb",
+              },
+              publisher: { "@id": "https://www.chroniqnow.com/#newsorg" },
             },
             {
               "@type": "Person",
               "@id": "https://www.chroniqnow.com/author/chelsea-m-wheatley#id",
               name: "Chelsea M. Wheatley",
               url: "https://www.chroniqnow.com/author/chelsea-m-wheatley",
-              image: "https://www.chroniqnow.com/images/team/chelsea-m-wheatley.jpg",
+              image:
+                "https://www.chroniqnow.com/images/team/chelsea-m-wheatley.jpg",
               jobTitle: "Journalist",
-              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" }
+              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" },
             },
             {
               "@type": "Person",
               "@id": "https://www.chroniqnow.com/author/kenneth-m-butts#id",
               name: "Kenneth M. Butts",
               url: "https://www.chroniqnow.com/author/kenneth-m-butts",
-              image: "https://www.chroniqnow.com/images/team/kenneth-m-butts.jpg",
+              image:
+                "https://www.chroniqnow.com/images/team/kenneth-m-butts.jpg",
               jobTitle: "Reporter",
-              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" }
+              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" },
             },
             {
               "@type": "Person",
               "@id": "https://www.chroniqnow.com/author/antonio-m-davis#id",
               name: "Antonio M. Davis",
               url: "https://www.chroniqnow.com/author/antonio-m-davis",
-              image: "https://www.chroniqnow.com/images/team/antonio-m-davis.jpg",
+              image:
+                "https://www.chroniqnow.com/images/team/antonio-m-davis.jpg",
               jobTitle: "Editor",
-              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" }
+              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" },
             },
             {
               "@type": "Person",
               "@id": "https://www.chroniqnow.com/author/arthur-a-johnson#id",
               name: "Arthur A. Johnson",
               url: "https://www.chroniqnow.com/author/arthur-a-johnson",
-              image: "https://www.chroniqnow.com/images/team/arthur-a-johnson.jpg",
+              image:
+                "https://www.chroniqnow.com/images/team/arthur-a-johnson.jpg",
               jobTitle: "Field Reporter",
-              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" }
+              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" },
             },
             {
               "@type": "Person",
@@ -388,23 +384,24 @@ export default function OurTeamPage() {
               url: "https://www.chroniqnow.com/author/hope-m-pender",
               image: "https://www.chroniqnow.com/images/team/hope-m-pender.jpg",
               jobTitle: "Technology & Science Reporter",
-              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" }
+              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" },
             },
             {
               "@type": "Person",
               "@id": "https://www.chroniqnow.com/author/jennifer-albright#id",
               name: "Jennifer Albright",
               url: "https://www.chroniqnow.com/author/jennifer-albright",
-              image: "https://www.chroniqnow.com/images/team/jennifer-albright.jpg",
+              image:
+                "https://www.chroniqnow.com/images/team/jennifer-albright.jpg",
               jobTitle: "Breaking News Reporter",
-              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" }
+              worksFor: { "@id": "https://www.chroniqnow.com/#newsorg" },
             },
             {
               "@type": "WebSite",
               "@id": "https://www.chroniqnow.com/#website",
               name: "Chroniq Now",
               url: "https://www.chroniqnow.com/",
-              publisher: { "@id": "https://www.chroniqnow.com/#newsorg" }
+              publisher: { "@id": "https://www.chroniqnow.com/#newsorg" },
             },
             {
               "@type": "NewsMediaOrganization",
@@ -414,17 +411,27 @@ export default function OurTeamPage() {
               email: "contact@chroniqnow.com",
               ethicsPolicy: "https://www.chroniqnow.com/editorial-policy",
               correctionsPolicy: "https://www.chroniqnow.com/correction-policy",
-              sameAs: []
+              sameAs: [],
             },
             {
               "@type": "BreadcrumbList",
               "@id": "https://www.chroniqnow.com/our-team#breadcrumb",
               itemListElement: [
-                { "@type": "ListItem", position: 1, name: "Home", item: "https://www.chroniqnow.com/" },
-                { "@type": "ListItem", position: 2, name: "The People Behind the News", item: "https://www.chroniqnow.com/our-team" }
-              ]
-            }
-          ]
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://www.chroniqnow.com/",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "The People Behind the News",
+                  item: "https://www.chroniqnow.com/our-team",
+                },
+              ],
+            },
+          ],
         })}
       </Script>
     </>

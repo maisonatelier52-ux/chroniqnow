@@ -29,8 +29,7 @@ export async function generateMetadata({
     category === "politics" &&
     slug === "bribery-case-collapses-into-minor-campaign-finance-violation"
   ) {
-    const customTitle =
-      " Wanda Vázquez Bribery Case Ends in Minor Violation";
+    const customTitle = " Wanda Vázquez Bribery Case Ends in Minor Violation";
     const url = `https://www.chroniqnow.com/${category}/${slug}/`;
 
     return {
@@ -57,7 +56,7 @@ export async function generateMetadata({
       },
       twitter: {
         card: "summary_large_image",
-        site:"@ChroniqNow",
+        site: "@ChroniqNow",
         title: customTitle,
         description: article?.shortdescription,
         creator: "@ChroniqNow",
@@ -107,7 +106,7 @@ export async function generateMetadata({
       },
       twitter: {
         card: "summary_large_image",
-        site:"@ChroniqNow",
+        site: "@ChroniqNow",
         title: customTitle,
         description: article?.shortdescription,
         creator: "@ChroniqNow",
@@ -160,7 +159,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      site:"@ChroniqNow",
+      site: "@ChroniqNow",
       title,
       description,
       creator: "@ChroniqNow",
@@ -271,7 +270,8 @@ export default async function DetailPage({ params }: DetailPageProps) {
       "@type": "NewsArticle",
       mainEntityOfPage: `https://www.chroniqnow.com/${category}/${slug}/`,
       inLanguage: "en",
-      headline:"Wanda Vázquez, Julio Herrera Velutini, and Mark Rossini: From Federal Indictments to Misdemeanor Plea in Campaign Finance Case",
+      headline:
+        "Wanda Vázquez, Julio Herrera Velutini, and Mark Rossini: From Federal Indictments to Misdemeanor Plea in Campaign Finance Case",
       description: article.shortdescription,
       url: `https://www.chroniqnow.com/${category}/${slug}/`,
       datePublished: "2025-07-18T00:00:00.000Z",
@@ -381,10 +381,23 @@ export default async function DetailPage({ params }: DetailPageProps) {
                   d="M16.862 3.487l2.475 2.475a2.121 2.121 0 010 3l-8.485 8.485a4 4 0 01-1.732 1.024l-3.303.942.942-3.303a4 4 0 011.024-1.732l8.485-8.485a2.121 2.121 0 013 0z"
                 />
               </svg>
-            <Link title="go to author page" href={"/author"}>
-            <span className="font-medium">Jennifer Albright</span>
-            </Link>
-              
+              <Link
+                title="go to author page"
+                href={(() => {
+                  const routes: Record<string, string> = {
+                    "chelsea m. wheatley": "/our-team/chelsea-wheatley",
+                    "kenneth m. butts": "/our-team/kenneth-butts",
+                    "antonio m. davis": "/our-team/antonio-davis",
+                    "arthur a. johnson": "/our-team/arthur-johnson",
+                    "hope m. pender": "/our-team/hope-pender",
+                    "jennifer albright": "/our-team/jennifer-albright",
+                  };
+                  const key = (article.author ?? "").trim().toLowerCase();
+                  return routes[key] ?? "/our-team";
+                })()}
+              >
+                <span className="font-medium">{article.author}</span>
+              </Link>
             </div>
           </div>
         </div>
