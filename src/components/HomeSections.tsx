@@ -41,6 +41,7 @@ export default function HomeSections({ data }: { data: CategoryData }) {
               <Image
                 src={main.image}
                 alt={main.title}
+                title={main.title}
                 width={1920}
                 height={1080}
                 className="w-full h-full object-cover"
@@ -71,6 +72,7 @@ export default function HomeSections({ data }: { data: CategoryData }) {
                 <Image
                   src={item.image}
                   alt={item.title}
+                  title={item.title}
                   width={400}
                   height={300}
                   className="w-full h-full object-cover"
@@ -78,9 +80,9 @@ export default function HomeSections({ data }: { data: CategoryData }) {
               </div>
 
               <div className="p-3 flex-1 flex flex-col justify-center">
-                <h4 className="text-sm sm:text-xl font-semibold leading-snug tracking-tight hover:text-red-600">
+                <h3 className="text-sm sm:text-xl font-semibold leading-snug tracking-tight hover:text-red-600">
                   {item.title}
-                </h4>
+                </h3>
               </div>
             </Link>
           ))}

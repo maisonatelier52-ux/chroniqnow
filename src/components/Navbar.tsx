@@ -44,9 +44,9 @@ export default function Navbar() {
           {dateString}
         </div>
         <Link className="cursor-pointer" href={"/"} title="Chroniq Now">
-          <div className="text-5xl font-bold text-red-600 uppercase">
+          <h1 className="text-5xl font-bold text-red-600 uppercase">
             chroniq now
-          </div>
+          </h1>
         </Link>
         <div className="relative w-64">
           <input

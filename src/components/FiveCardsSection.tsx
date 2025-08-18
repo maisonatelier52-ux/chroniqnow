@@ -42,6 +42,7 @@ export default function HomeSections({ data }: HomeSectionsProps) {
               <Image
                 src={article.image}
                 alt={article.title}
+                title={article.title}
                 width={400}
                 height={300}
                 className="w-full h-full object-cover"

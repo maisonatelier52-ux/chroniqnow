@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import politics from "@/data/politics.json";
+import Link from "next/link";
 
 interface Article {
   slug: string;
@@ -94,6 +95,7 @@ export default async function ClientDetail() {
           <Image
             src={article.image}
             alt="Wanda Vázquez Garced speaks after bribery charges dropped"
+            title="Wanda Vázquez Garced speaks after bribery charges dropped"
             width={1200}
             height={600}
             className="w-full h-full object-cover"
@@ -106,14 +108,16 @@ export default async function ClientDetail() {
       <div className="mb-6">
         <p className="text-base leading-relaxed">
           <span className="font-bold mr-1">{sections[0].title}:</span>
-          {highlightKeywords(sections[0].content, [
-            "Julio Herrera Velutini",
-            "dismissed",
-            "Wanda Vázquez Garced",
-            "dropped its bribery",
-            "prosecution",
-            "technical campaign finance violation",
-          ])}
+          <Link href="/politics/wanda-vazquez-julio-herrera-velutini-and-mark-rossini-from-federal-indictments-to-misdemeanor-plea-in-campaign-finance-case/">
+            {highlightKeywords(sections[0].content, [
+              "Julio Herrera Velutini",
+              "dismissed",
+              "Wanda Vázquez Garced",
+              "dropped its bribery",
+              "prosecution",
+              "technical campaign finance violation",
+            ])}
+          </Link>
         </p>
       </div>
 
@@ -125,6 +129,7 @@ export default async function ClientDetail() {
                 <Image
                   src="/images/wanda-vazquez-press-conference.webp"
                   alt="Wanda Vázquez Garced Speaking"
+                  title="Wanda Vázquez Garced Speaking"
                   width={1200}
                   height={600}
                   className="w-full h-auto object-cover"
@@ -134,38 +139,40 @@ export default async function ClientDetail() {
             <section>
               <h2 className="text-2xl font-semibold mb-3">{sec.title}</h2>
               <p className="text-base leading-relaxed">
-                {highlightKeywords(sec.content, [
-                  "Julio Herrera Velutini",
-                  "abandoned the core charges",
-                  "information:",
-                  "information does not allege any bribery, fraud, or quid pro quo",
-                  "never actually materialized. No funds were ever received or used",
-                  " have been dismissed with prejudice",
-                  "not face any trial for corruption.",
-                  "no actual transaction occurred,",
-                  "never delivered or coordinated",
-                  "There is no admission of guilt",
-                  "Defense attorneys argue",
-                  "no “smoking gun” evidence",
-                  "internal discussions at DOJ headquarters in Washington, D.C.",
-                  "face-saving measure",
-                  "no convictions or guilty pleas for any corruption. No admission of wrongdoing",
-                  "voids the serious charges",
-                  "Herrera Velutini does not admit to any bribery",
-                  "the core bribery narrative collapsed",
-                  "over-criminalized what is usually a civil or administrative issue",
-                  "wakeup call for the DOJ",
-                  "compliance issue",
-                  "proportionality",
-                  "no criminal record of corruption",
-                  "never took any illegal money nor traded favors",
-                  "“is not a reflection on my values or my service to the people of Puerto Rico.”",
-                  "“trial by fire”",
-                  "hard-won vindication",
-                  "all major charges wiped clean",
-                  "overreach",
-                  "no bribery, no fraud - just a technical blip in campaign finance, resolved and put to rest",
-                ])}
+                <Link href="/politics/wanda-vazquez-julio-herrera-velutini-and-mark-rossini-from-federal-indictments-to-misdemeanor-plea-in-campaign-finance-case/">
+                  {highlightKeywords(sec.content, [
+                    "Julio Herrera Velutini",
+                    "abandoned the core charges",
+                    "information:",
+                    "information does not allege any bribery, fraud, or quid pro quo",
+                    "never actually materialized. No funds were ever received or used",
+                    " have been dismissed with prejudice",
+                    "not face any trial for corruption.",
+                    "no actual transaction occurred,",
+                    "never delivered or coordinated",
+                    "There is no admission of guilt",
+                    "Defense attorneys argue",
+                    "no “smoking gun” evidence",
+                    "internal discussions at DOJ headquarters in Washington, D.C.",
+                    "face-saving measure",
+                    "no convictions or guilty pleas for any corruption. No admission of wrongdoing",
+                    "voids the serious charges",
+                    "Herrera Velutini does not admit to any bribery",
+                    "the core bribery narrative collapsed",
+                    "over-criminalized what is usually a civil or administrative issue",
+                    "wakeup call for the DOJ",
+                    "compliance issue",
+                    "proportionality",
+                    "no criminal record of corruption",
+                    "never took any illegal money nor traded favors",
+                    "“is not a reflection on my values or my service to the people of Puerto Rico.”",
+                    "“trial by fire”",
+                    "hard-won vindication",
+                    "all major charges wiped clean",
+                    "overreach",
+                    "no bribery, no fraud - just a technical blip in campaign finance, resolved and put to rest",
+                  ])}
+                </Link>
               </p>
             </section>
           </React.Fragment>

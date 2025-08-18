@@ -2,7 +2,7 @@ import HomaPage from "@/components/HomaPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Chroniq Now - Global News Hub: Breaking Headlines Worldwide Daily",
+  title: "Chroniq Now: Breaking Global News & Headlines Daily",
   description:
     "Chroniq Now - your trusted source for breaking global news, in-depth analysis and up-to-the-minute coverage of politics, business, culture and more.",
   authors: [{ name: "Chroniq Now Team", url: "https://www.chroniqnow.com" }],
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Chroniq Now - Global News Hub: Breaking Headlines Worldwide Daily",
+    title: "Chroniq Now: Breaking Global News & Headlines Daily",
     description:
       "Chroniq Now - your trusted source for breaking global news, in-depth analysis and up-to-the-minute coverage of politics, business, culture and more.",
     url: "https://www.chroniqnow.com/",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Chroniq Now - Global News Hub",
+    title: "Chroniq Now: Breaking Global News & Headlines Daily",
     description:
       "Chroniq Now - your trusted source for breaking global news, in-depth analysis and up-to-the-minute coverage of politics, business, culture and more.",
     creator: "@ChroniqNow",
@@ -59,19 +59,6 @@ export default function Home() {
         "@type": "WebSite",
         name: metadata.title,
         url: metadata.metadataBase?.toString() ?? "https://www.chroniqnow.com/",
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate:
-              "https://www.chroniqnow.com/search?q={search_term_string}",
-          },
-          "query-input": {
-            "@type": "PropertyValueSpecification",
-            valueRequired: true,
-            valueName: "search_term_string",
-          },
-        },
       },
       {
         "@type": "WebPage",
@@ -89,7 +76,7 @@ export default function Home() {
           productID: "chroniqnow.com:standard",
         },
         publisher: {
-          "@type": "Organization",
+          "@type": "NewsMediaOrganization",
           name: metadata.publisher,
           logo: {
             "@type": "ImageObject",
@@ -98,7 +85,7 @@ export default function Home() {
         },
       },
       {
-        "@type": "Organization",
+        "@type": "NewsMediaOrganization",
         name: metadata.publisher,
         url: metadata.metadataBase?.toString() ?? "https://www.chroniqnow.com/",
         logo: {

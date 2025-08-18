@@ -6,6 +6,7 @@ export interface Article {
   date: string;
   shortdescription: string;
   description: string;
+  author:string
 }
 
 export interface ArticleWithCategory extends Article {

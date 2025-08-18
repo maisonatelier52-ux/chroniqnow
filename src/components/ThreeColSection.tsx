@@ -46,6 +46,7 @@ export default function ThreeColSection({ data }: ThreeColSectionProps) {
                       <Image
                         src={article.image}
                         alt={article.title}
+                        title={article.title}
                         width={300}
                         height={400}
                         className="w-full h-full object-cover"
