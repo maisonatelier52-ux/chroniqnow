@@ -82,6 +82,10 @@ export default function Home() {
             "@type": "ImageObject",
             url: "https://www.chroniqnow.com/images/chroniqnow-logo.webp",
           },
+          sameAs: [
+            "https://x.com/ChroniqNow",
+            "https://www.instagram.com/chroniqnow/",
+          ],
         },
       },
       {

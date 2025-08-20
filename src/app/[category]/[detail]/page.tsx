@@ -247,6 +247,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
           "@type": "ImageObject",
           url: "https://www.chroniqnow.com/images/ChroniqNow-logo.webp",
         },
+        sameAs: [
+          "https://x.com/ChroniqNow",
+          "https://www.instagram.com/chroniqnow/",
+        ],
       },
       image: {
         "@type": "ImageObject",
@@ -298,6 +302,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
           "@type": "ImageObject",
           url: "https://www.chroniqnow.com/images/ChroniqNow-logo.webp",
         },
+        sameAs: [
+          "https://x.com/ChroniqNow",
+          "https://www.instagram.com/chroniqnow/",
+        ],
       },
       image: {
         "@type": "ImageObject",
