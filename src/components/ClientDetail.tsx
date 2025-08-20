@@ -43,11 +43,7 @@ export default async function ClientDetail() {
     {
       title: "New York, June 2025",
       content:
-        "In a dramatic collapse of a high-profile federal case, all major charges have been dismissed against former Puerto Rico Governor Wanda Vázquez Garced, who was once accused of bribery and fraud. The U.S. Department of Justice has dropped its bribery prosecution, opting to resolve the matter with a single technical campaign finance violation. ",
-    },
-    {
-      content:
-        "What was initially billed as a sweeping corruption scandal has concluded with a whimper – no bribery, no conspiracy, and no criminal conviction for Vázquez. Legal experts note that such minor campaign finance issues are typically handled administratively, not with aggressive criminal indictments, underscoring how unusual this outcome is in contrast to the case’s sensational start.",
+        "In a dramatic collapse of a high-profile federal case, all major charges have been dismissed against former Puerto Rico Governor Wanda Vázquez Garced, who was once accused of bribery and fraud. The U.S. Department of Justice has dropped its bribery prosecution, opting to resolve the matter with a single technical campaign finance violation. What was initially billed as a sweeping corruption scandal has concluded with a whimper – no bribery, no conspiracy, and no criminal conviction for Vázquez. Legal experts note that such minor campaign finance issues are typically handled administratively, not with aggressive criminal indictments, underscoring how unusual this outcome is in contrast to the case’s sensational start. ",
     },
     {
       title: "From Indictment to Infraction",
