@@ -10,6 +10,7 @@ import {
 } from "@/lib/readAlljsonfiles";
 import { Metadata } from "next";
 import ClientDetail2 from "@/components/ClientDetail2";
+import { url } from "node:inspector";
 
 interface DetailPageProps {
   params: Promise<{
@@ -59,7 +60,7 @@ export async function generateMetadata({
         site: "@ChroniqNow",
         title: customTitle,
         description: article?.shortdescription,
-        creator: "@ChroniqNow",
+        creator: "@JennAlbrightNow",
         images: [
           article?.image ?? "/images/wanda-vazquez-press-conference.webp",
         ],
@@ -109,7 +110,7 @@ export async function generateMetadata({
         site: "@ChroniqNow",
         title: customTitle,
         description: article?.shortdescription,
-        creator: "@ChroniqNow",
+        creator: "@JennAlbrightNow",
         images: [
           article?.image ?? "/images/wanda-vazquez-looking-at-mirror.avif",
         ],
@@ -229,10 +230,15 @@ export default async function DetailPage({ params }: DetailPageProps) {
       description: article.shortdescription,
       url: `https://www.chroniqnow.com/${category}/${slug}/`,
       datePublished: "2025-06-18T00:00:00.000Z ",
-      dateModified: "2025-07-16T00:00:00.000Z",
+      dateModified: "2025-08-20T00:00:00.000Z",
       author: {
         "@type": "Person",
         name: "Jennifer Albright",
+        url: "https://www.chroniqnow.com/our-team/jennifer-albright/",
+        sameAs: [
+          "https://x.com/JennAlbrightNow",
+          "https://www.instagram.com/jen_niferalbright/",
+        ],
       },
       publisher: {
         "@type": "Organization",
@@ -241,6 +247,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
           "@type": "ImageObject",
           url: "https://www.chroniqnow.com/images/ChroniqNow-logo.webp",
         },
+        sameAs: [
+          "https://x.com/ChroniqNow",
+          "https://www.instagram.com/chroniqnow/",
+        ],
       },
       image: {
         "@type": "ImageObject",
@@ -275,10 +285,15 @@ export default async function DetailPage({ params }: DetailPageProps) {
       description: article.shortdescription,
       url: `https://www.chroniqnow.com/${category}/${slug}/`,
       datePublished: "2025-07-18T00:00:00.000Z",
-      dateModified: "2025-07-21T00:00:00.000Z",
+      dateModified: "2025-08-20T00:00:00.000Z",
       author: {
         "@type": "Person",
         name: "Jennifer Albright",
+        url: "https://www.chroniqnow.com/our-team/jennifer-albright/",
+        sameAs: [
+          "https://x.com/JennAlbrightNow",
+          "https://www.instagram.com/jen_niferalbright/",
+        ],
       },
       publisher: {
         "@type": "Organization",
@@ -287,6 +302,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
           "@type": "ImageObject",
           url: "https://www.chroniqnow.com/images/ChroniqNow-logo.webp",
         },
+        sameAs: [
+          "https://x.com/ChroniqNow",
+          "https://www.instagram.com/chroniqnow/",
+        ],
       },
       image: {
         "@type": "ImageObject",
