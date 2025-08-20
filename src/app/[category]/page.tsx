@@ -87,7 +87,6 @@ export async function generateMetadata({
       site:"@ChroniqNow",
       title,
       description,
-      creator: "@ChroniqNow",
       images: [ogImage],
     },
     robots: {

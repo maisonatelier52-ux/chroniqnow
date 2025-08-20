@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Chroniq Now: Breaking Global News & Headlines Daily",
     description:
       "Chroniq Now - your trusted source for breaking global news, in-depth analysis and up-to-the-minute coverage of politics, business, culture and more.",
-    creator: "@ChroniqNow",
+    site: "@ChroniqNow",
     images: ["https://www.chroniqnow.com/images/ChroniqNow-logo.webp"],
   },
 
