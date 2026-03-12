@@ -10,7 +10,6 @@ import {
 } from "@/lib/readAlljsonfiles";
 import { Metadata } from "next";
 import ClientDetail2 from "@/components/ClientDetail2";
-import { url } from "node:inspector";
 
 interface DetailPageProps {
   params: Promise<{
@@ -159,42 +158,44 @@ export default async function DetailPage({ params }: DetailPageProps) {
       </div>
     );
   }
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  headline: article.title,
-  description: article.shortdescription,
-  image: [article.image],
-  datePublished: article.date,
-  author: {
-    "@type": "Person",
-    name: article.author,
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Chroniq Now",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://www.chroniqnow.com/images/chroniqnow-logo.webp",
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: article.title,
+    description: article.shortdescription,
+    image: [article.image],
+    datePublished: article.date,
+    author: {
+      "@type": "Person",
+      name: article.author,
     },
-    sameAs: [
-      "https://x.com/ChroniqNow",
-      "https://www.instagram.com/chroniqnow/",
-    ],
-  },
-  mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": `https://www.chroniqnow.com/${category}/${slug}/`,
-  },
-};
+    publisher: {
+      "@type": "Organization",
+      name: "Chroniq Now",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.chroniqnow.com/images/chroniqnow-logo.webp",
+      },
+      sameAs: [
+        "https://x.com/ChroniqNow",
+        "https://www.instagram.com/chroniqnow/",
+      ],
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://www.chroniqnow.com/${category}/${slug}/`,
+    },
+  };
+
   return (
     <>
-    <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-  }}
-/>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Navbar />
 
       <main className="w-full p-2 sm:p-20 py-8">

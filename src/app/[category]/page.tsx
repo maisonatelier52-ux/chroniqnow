@@ -30,9 +30,9 @@ export async function generateStaticParams(): Promise<{ category: string }[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 }): Promise<Metadata> {
-  const category = params.category;
+  const { category } = await params;
   const dataPath = path.join(process.cwd(), "src", "data", `${category}.json`);
 
   let raw: string;
@@ -113,9 +113,9 @@ export async function generateMetadata({
 export default async function CategoryPage({
   params,
 }: {
-  params: { category: string };
+  params: Promise<{ category: string }>;
 }) {
-  const category = params.category;
+  const { category } = await params;
   const dataPath = path.join(process.cwd(), "src", "data", `${category}.json`);
 
   let raw: string;
