@@ -9,19 +9,30 @@ import LoadMoreArticles from "@/components/LoadMoreArticles";
 import type { Article } from "@/types/homepage";
 import type { Metadata } from "next";
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ category: string }[]> {
   const dataDir = path.join(process.cwd(), "src", "data");
-  const files = await fs.readdir(dataDir);
+
+  let files: string[] = [];
+
+  try {
+    files = await fs.readdir(dataDir);
+  } catch {
+    return [];
+  }
+
   return files
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => ({ category: f.replace(/\.json$/, "") }));
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => ({
+      category: file.replace(".json", ""),
+    }));
 }
+
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ category: string }>;
+  params: { category: string };
 }): Promise<Metadata> {
-  const category = (await params).category;
+  const category = params.category;
   const dataPath = path.join(process.cwd(), "src", "data", `${category}.json`);
 
   let raw: string;
@@ -43,21 +54,23 @@ export async function generateMetadata({
     articles = [];
   }
 
-  // sort by date descending and pick the latest article
   const sorted = articles.slice().sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
+
   const latest = sorted[0];
 
   const ogImage =
     latest?.image || "https://www.chroniqnow.com/images/chroniqnow-logo.webp";
 
-  const capitalized = category.charAt(0).toUpperCase() + category.slice(1);
+  // FIXED: remove hyphen and capitalize
+  const capitalized = category
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 
-  // SEO-optimized title (55–60 chars)
   const title = `${capitalized} News - Chroniq Now: Global ${capitalized} Headlines`;
-  // SEO-optimized description (~140–150 chars)
-  const description = `Get the latest ${capitalized}  news from Chroniq Now. We offer breaking updates, in-depth analysis, and exclusive stories on global politics, business, and culture.`;
+
+  const description = `Get the latest ${capitalized} news from Chroniq Now. We offer breaking updates, in-depth analysis, and exclusive stories on global politics, business, and culture.`;
 
   return {
     title,
@@ -84,7 +97,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      site:"@ChroniqNow",
+      site: "@ChroniqNow",
       title,
       description,
       images: [ogImage],
@@ -100,9 +113,9 @@ export async function generateMetadata({
 export default async function CategoryPage({
   params,
 }: {
-  params: Promise<{ category: string }>;
+  params: { category: string };
 }) {
-  const category = (await params).category;
+  const category = params.category;
   const dataPath = path.join(process.cwd(), "src", "data", `${category}.json`);
 
   let raw: string;
@@ -112,7 +125,6 @@ export default async function CategoryPage({
     return notFound();
   }
 
-  // parse the file as an array of Article
   let articles: Article[];
   try {
     articles = JSON.parse(raw) as Article[];
@@ -120,14 +132,15 @@ export default async function CategoryPage({
     return notFound();
   }
 
-  // pagination / slicing
   const pageArticles = articles.slice(0, 11);
   const featuredArticle = pageArticles[0];
   const otherPageArticles = pageArticles.slice(1);
   const bottomArticles = pageArticles.slice(7);
 
-  // 1) compute capitalized
-  const capitalized = category.charAt(0).toUpperCase() + category.slice(1);
+  // FIXED: remove hyphen and capitalize
+  const capitalized = category
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -153,9 +166,9 @@ export default async function CategoryPage({
         url: "https://www.chroniqnow.com/images/chroniqnow-logo.webp",
       },
       sameAs: [
-          "https://x.com/ChroniqNow",
-          "https://www.instagram.com/chroniqnow/",
-        ],
+        "https://x.com/ChroniqNow",
+        "https://www.instagram.com/chroniqnow/",
+      ],
     },
   };
 
@@ -170,7 +183,6 @@ export default async function CategoryPage({
       <Navbar />
 
       <main className=" p-2 sm:p-20 py-8">
-        {/* breadcrumb + title */}
         <nav aria-label="Breadcrumb" className="mb-2 text-sm">
           <ol className="flex items-center">
             <li>
@@ -181,28 +193,29 @@ export default async function CategoryPage({
             <li>
               <span className="mx-2 text-gray-500">»</span>
             </li>
-            <li className="uppercase text-gray-900 text-md">{category}</li>
+            <li className="uppercase text-gray-900 text-md">{capitalized}</li>
           </ol>
         </nav>
 
         <div className="flex items-center mb-8">
-  <div className="w-0.5 h-8 bg-red-600 mr-3" />
-  <h1 className="uppercase text-2xl sm:text-3xl text-gray-900">
-    {category}
-  </h1>
-</div>
+          <div className="w-0.5 h-8 bg-red-600 mr-3" />
+          <h1 className="uppercase text-2xl sm:text-3xl text-gray-900">
+            {capitalized}
+          </h1>
+        </div>
 
-{/* Introductory SEO text */}
-<div className="mb-10 space-y-4 text-gray-700 leading-relaxed">
-  <p>
-    Follow the most important <strong>{category} news</strong> stories as they break, 
-    with trusted reporting and analysis that cuts through the noise.
-  </p>
-  <p>
-    Our dedicated <strong>{category}</strong> coverage keeps you updated on key 
-    developments, exclusive insights, and the trends shaping what happens next.
-  </p>
-</div>
+        <div className="mb-10 space-y-4 text-gray-700 leading-relaxed">
+          <p>
+            Follow the most important <strong>{capitalized} news</strong>{" "}
+            stories as they break, with trusted reporting and analysis that
+            cuts through the noise.
+          </p>
+          <p>
+            Our dedicated <strong>{capitalized}</strong> coverage keeps you
+            updated on key developments, exclusive insights, and the trends
+            shaping what happens next.
+          </p>
+        </div>
 
 
 

@@ -15,11 +15,14 @@ export default function HomeSections({ data }: HomeSectionsProps) {
   const { category, articles } = data;
   const displayArticles = articles.slice(0, 5);
 
+  // FIX: remove hyphen only for display
+  const displayCategory = category.replace(/-/g, " ").toUpperCase();
+
   return (
     <section className="border-t pt-6">
-      <Link href={`/${category}/`} title={`${category} news`}>
+      <Link href={`/${category}/`} title={`${displayCategory} news`}>
         <h2 className="flex items-center text-2xl sm:text-3xl uppercase text-red-600 mb-4">
-          {category.toUpperCase()}
+          {displayCategory}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"

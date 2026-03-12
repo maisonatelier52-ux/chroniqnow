@@ -23,7 +23,7 @@ export default function Footer() {
       <Link href="/science">SCIENCE</Link>
       <Link href="/sports">SPORTS</Link>
       <Link href="/technology">TECHNOLOGY</Link>
-
+      <Link href="/puerto-rico">PUERTO RICO</Link>
         </div>
       </div>
     </footer>

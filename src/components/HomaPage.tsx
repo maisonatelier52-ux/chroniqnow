@@ -14,6 +14,7 @@ import healthJson from "@/data/health.json";
 import sportsJson from "@/data/sports.json";
 import scienceJson from "@/data/science.json";
 import technologyJson from "@/data/technology.json";
+import puertoricoJson from "@/data/puerto-rico.json";
 
 export default function HomePage() {
   const latestArticles = getLatestArticles() as ArticleWithCategory[];
@@ -34,6 +35,11 @@ export default function HomePage() {
     category: "sports",
     articles: sportsJson as Article[],
   };
+const puertoricoSection: CategoryData = {
+  category: "puerto-rico",
+  label: "Puerto Rico",
+  articles: puertoricoJson as Article[],
+};
   const scienceSection: CategoryData = {
     category: "science",
     articles: scienceJson as Article[],
@@ -55,6 +61,7 @@ export default function HomePage() {
         <HomeSections data={politicsSection} />
         <HomeSections data={healthSection} />
         <FiveCardsSection data={sportsSection} />
+        <FiveCardsSection data={puertoricoSection} />
         <ThreeColSection
           data={[scienceSection, technologySection, businessSection]}
         />

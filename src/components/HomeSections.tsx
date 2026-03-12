@@ -4,6 +4,7 @@ import { Article } from "@/types/homepage";
 
 export type CategoryData = {
   category: string;
+  label?: string;
   articles: Article[];
 };
 

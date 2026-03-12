@@ -29,6 +29,7 @@ export default function Navbar() {
     "science",
     "sports",
     "technology",
+    "puerto-rico"
   ];
 
   return (
@@ -73,7 +74,7 @@ export default function Navbar() {
             <li key={i} className="relative">
               {item === "home" ? (
                 <Link href="/" className="flex items-center" title={item.toUpperCase()}>
-                  {item.toUpperCase()}
+                  {item.replace("-", " ").toUpperCase()}
                 </Link>
               ) : (
                 <Link
@@ -81,7 +82,7 @@ export default function Navbar() {
                   className="flex items-center"
                   title={item.toUpperCase()}
                 >
-                  {item.toUpperCase()}
+                  {item.replace("-", " ").toUpperCase()}
                 </Link>
               )}
             </li>
@@ -96,7 +97,7 @@ export default function Navbar() {
             <li key={i} className="relative pr-1">
               {item === "home" ? (
                 <Link href="/" className="flex items-center" title={item.toUpperCase()}>
-                  {item.toUpperCase()}
+                  {item.replace("-", " ").toUpperCase()}
                 </Link>
               ) : (
                 <Link
@@ -104,7 +105,7 @@ export default function Navbar() {
                   className="flex items-center"
                   title={item.toUpperCase()}
                 >
-                  {item.toUpperCase()}
+                  {item.replace("-", " ").toUpperCase()}
                 </Link>
               )}
             </li>
