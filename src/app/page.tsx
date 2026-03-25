@@ -86,7 +86,7 @@ export default function Home() {
         },
         sameAs: [
           "https://x.com/ChroniqNow",
-          "https://www.instagram.com/chroniqnow/",
+          "https://www.instagram.com/chroniq.now/",
         ],
       },
     ],
