@@ -413,10 +413,6 @@ export default function LongFormArticlePage({
               {displayDate}
             </time>
           )}
-          {/* Longform tag */}
-          <span className="text-xs font-bold uppercase tracking-widest bg-red-600 text-white px-2 py-0.5 rounded">
-            Investigation
-          </span>
         </div>
       </div>
 
